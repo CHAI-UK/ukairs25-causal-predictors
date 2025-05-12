@@ -37,12 +37,39 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <!-- PyScript CSS -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+
+  <!-- This script tag bootstraps PyScript -->
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+  <!-- for splashscreen -->
+  <style>
+    #loading { outline: none; border: none; background: transparent }
+  </style>
+  <script type="module">
+    const loading = document.getElementById('loading');
+    addEventListener('py:ready', () => loading.close());
+    loading.showModal();
+  </script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <!-- bokeh scripts -->
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.2.2.js"></script>
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.2.2.min.js"></script>
+  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.2.2.min.js"></script>
+  <script type="text/javascript">
+      Bokeh.set_log_level("info");
+  </script>
+
+  <!-- panel scripts -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@holoviz/panel@1.3.8/dist/panel.min.js"></script>
 </head>
 <body>
 
@@ -150,23 +177,6 @@
   </div>
 </section>
 
-
-<!-- Teaser video
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-End teaser video -->
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -185,96 +195,6 @@ End teaser video -->
 <!-- End paper abstract -->
 
 
-<!-- Image carousel
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-End image carousel -->
-
-
-<!-- Youtube video 
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-        
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-End youtube video -->
-
-
-<!-- Video carousel 
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-End video carousel -->
-
-
 <!-- Paper poster
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -289,6 +209,7 @@ End video carousel -->
   </section>
 End paper poster -->
 
+<!--
 <section class="section">
   <div class="container is-max-desktop content">
     <h2 class="title">Demo</h2>
@@ -297,6 +218,27 @@ End paper poster -->
       width="100%"
       height="600"
 ></iframe>
+  </div>
+</section>
+-->
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Demo</h2>
+
+    <dialog id="loading">
+      <h1>Loading...</h1>
+    </dialog>
+
+    <section class="pyscript">
+      <div id="simple_app"></div>
+      <script type="py" src="./demo/main.py" config="./demo/pyscript.json"></script>
+    </section>
+
+    <button py-click="run">Run</button>
+
+    <div id="output"></div>
+    <div id="plot"></div>
   </div>
 </section>
 
