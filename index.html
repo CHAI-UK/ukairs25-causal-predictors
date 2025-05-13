@@ -48,9 +48,9 @@
     #loading { outline: none; border: none; background: transparent }
   </style>
   <script type="module">
-    const loading = document.getElementById('loading');
-    addEventListener('py:ready', () => loading.close());
-    loading.showModal();
+    //const loading = document.getElementById('loading');
+    //addEventListener('py:ready', () => loading.close());
+    //loading.showModal();
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -226,18 +226,20 @@ End paper poster -->
   <div class="container is-max-desktop content">
     <h2 class="title">Demo</h2>
 
-    <dialog id="loading">
-      <h1>Loading...</h1>
-    </dialog>
-
-    <section class="pyscript">
-      <div id="graph_img"></div>
-      <div id="simple_app"></div>
-      <button py-click="run">Reset</button>
+    <section class="pyscript" style="height: 700px;">
+      <div id="graph_img" style="height: 40%;"></div>
+      <div style="height: 60%;">
+        <div style="width: 40%; float: left">
+          <div id="simple_app"></div>
+          <button py-click="run">Reset</button>
+        </div>
+        
+        <div id="plot" style="width: 60%; float: right;"></div>
+      </div>
+      
       <script type="py" src="./demo/main_alt.py" config="./demo/pyscript.json"></script>      
     </section>
 
-    <div id="plot"></div>
   </div>
 </section>
 
