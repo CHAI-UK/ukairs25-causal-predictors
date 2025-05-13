@@ -1,8 +1,9 @@
 {
-    "packages": ["panel==1.3.8", "bokeh==3.2.2", "scikit-learn", "matplotlib", "networkx"],
+    "packages": ["panel==1.3.8", "bokeh==3.2.2", "scikit-learn", "matplotlib", "networkx", "Pillow"],
     "files": {
         "./demo/my_utils.py": "",
-        "./demo/models/model_TC-conf_observed_linear_normal_lr_1000_all.pkl": "",
-        "./demo/models/model_TC-conf_observed_linear_normal_lr_1000_causal.pkl": ""
+        "./demo/models/model_3-conf_observed_linear_normal_lr_1000_all.pkl": "",
+        "./demo/models/model_3-conf_observed_linear_normal_lr_1000_causal.pkl": "",
+        "./demo/graphics/graphs/graph.png": ""
     }
 }

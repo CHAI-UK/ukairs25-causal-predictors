@@ -231,13 +231,12 @@ End paper poster -->
     </dialog>
 
     <section class="pyscript">
+      <div id="graph_img"></div>
       <div id="simple_app"></div>
-      <script type="py" src="./demo/main.py" config="./demo/pyscript.json"></script>
+      <button py-click="run">Reset</button>
+      <script type="py" src="./demo/main_alt.py" config="./demo/pyscript.json"></script>      
     </section>
 
-    <button py-click="run">Run</button>
-
-    <div id="output"></div>
     <div id="plot"></div>
   </div>
 </section>

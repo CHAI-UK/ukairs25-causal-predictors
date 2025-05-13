@@ -1,5 +1,5 @@
-CASES=("TC-conf")
-CONFS=("observed")
+CASES=("3-conf")
+CONFS=("observed" "hidden")
 
 for CASE in ${CASES[@]}
 do
