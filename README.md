@@ -1,6 +1,6 @@
 # A Shift in Perspective on Causality in Domain Generalization (UKAIRS 25)
 
-➡️ **https://dmachlanski.com/ukairs25-causal-predictors/**
+➡️ **https://chai-uk.github.io/ukairs25-causal-predictors/**
 
 ## Acknowledgments
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
