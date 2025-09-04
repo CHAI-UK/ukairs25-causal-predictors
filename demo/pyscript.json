@@ -4,6 +4,7 @@
         "./demo/my_utils.py": "",
         "./demo/models/model_3-conf_observed_linear_normal_lr_1000_all.pkl": "",
         "./demo/models/model_3-conf_observed_linear_normal_lr_1000_causal.pkl": "",
-        "./demo/graphics/graphs/graph.png": ""
+        "./demo/graphics/graphs/Smoking_Example_new.png": "",
+        "./demo/graphics/graphs/CKD_Example_new.png": ""
     }
 }

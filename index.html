@@ -135,17 +135,16 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link 
+                    <!-- Supplementary PDF link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="static/pdfs/ukairs_poster.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Poster</span>
                     </a>
                   </span>
-                  -->
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -222,22 +221,45 @@ End paper poster -->
 </section>
 -->
 
-<section class="section">
+<section class="section hero">
   <div class="container is-max-desktop content">
-    <h2 class="title">Demo</h2>
+    <h2 class="title">Smoking Scenario</h2>
+    <div class="content has-text-justified">
+      <p>
+        Suppose we are interested in predicting the diagnosis of lung cancer. It is well established that smoking causes lung cancer, but the relationship may be confounded by age, socio-economic status or occupation. Patients diagnosed with lung cancer often experience significant weight loss.
+      </p>
+      <p>
+        At present people aged 55 – 74 and have ever smoked are screened for lung cancer. Otherwise, patients are only tested for lung cancer if they present to the GP with symptoms. Consider the screening criteria was widened to include a wider range of ages and people who have never smoked. This could then cause some patients to be diagnosed sooner and at early stages of the disease. As such patients may not be as sick and the average rate of weight loss changes. In this case we may see a distribution shift in the weight loss variable.
+      </p>
+    </div>
 
-    <section class="pyscript" style="height: 700px;">
-      <div id="graph_img" style="height: 40%;"></div>
-      <div style="height: 60%;">
-        <div style="width: 40%; float: left">
-          <div id="simple_app"></div>
-          <button py-click="run">Reset</button>
-        </div>
-        
-        <div id="plot" style="width: 60%; float: right;"></div>
-      </div>
-      
-      <script type="py" src="./demo/main_alt.py" config="./demo/pyscript.json"></script>      
+    <section class="pyscript" style="height: 400px;">
+      <div id="smoking_img" style="width: 50%; float: left"></div>
+      <div id="smoking_plot" style="width: 50%; float: right;"></div>
+      <div id="smoking_app"></div>
+      <script type="py" src="./demo/main_smoking.py" config="./demo/pyscript.json"></script>      
+    </section>
+
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Chronic Kidney Disease Scenario</h2>
+    <div class="content has-text-justified">
+      <p>
+        Suppose we wish to predict the onset of chronic kidney disease (CKD). Type 1 diabetes is one of the leading causes of CKD. However, both diseases are commonly caused by high blood pressure. Type 1 diabetes is a chronic condition that requires constant vigilance on blood glucose levels, which some patients struggle to manage.
+      </p>
+      <p>
+        An insulin pump is a small electronic device that releases the regular insulin your body needs through the day and night. Insulin pumps are not widely available on the NHS to all patients with type 1 diabetes. For many this means that they would need to self-fund an insulin pump. However, if they became more widely available on the NHS then people would be able to better manage their diabetes and we may see a distribution shift in blood glucose levels.
+      </p>
+    </div>
+
+    <section class="pyscript" style="height: 400px;">
+      <div id="ckd_img" style="width: 50%; float: right;"></div>
+      <div id="ckd_plot" style="width: 50%; float: left;"></div>
+      <div id="ckd_app"></div>
+      <script type="py" src="./demo/main_ckd.py" config="./demo/pyscript.json"></script>      
     </section>
 
   </div>

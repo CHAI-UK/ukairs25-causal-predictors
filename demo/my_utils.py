@@ -125,6 +125,20 @@ def define_adjmat(case):
                         [0,1,0,1,0]  # potential confounder of spurious and causal feature
                         ])
         cols = ['target', 'causal', 'anti-causal', 'spurious', 'SC-conf']
+    elif case == '4var-spurious':
+        adj = np.array([[0,0,0,0], # target
+                        [1,0,1,0], # causal feature
+                        [0,0,0,0], # spurious feature
+                        [1,1,0,0]  # potential confounder of target and causal feature
+                        ])
+        cols = ['target', 'causal', 'spurious', 'TC-conf']
+    elif case == '4var-anticausal':
+        adj = np.array([[0,0,1,0], # target
+                        [1,0,0,0], # causal feature
+                        [0,0,0,0], # anti-causal feature
+                        [1,1,0,0]  # potential confounder of target and causal feature
+                        ])
+        cols = ['target', 'causal', 'anti-causal', 'TC-conf']
     else:
         raise ValueError('Incorrect graph case')
     
